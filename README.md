@@ -5,7 +5,8 @@
 
 The KQL query below selects data from the SecurityEvent table in Azure Sentinel, where the EventID is equal to 4624, and the AccountType is equal to "User" and the LogonType is equal to 2. The query then projects this results in an easy to read table that displays *TimeGenerated, Account, Computer, LogonType,* and *IpAddress* columns.
 
-```SecurityEvent
+```
+SecurityEvent
 | where EventID == 4624
 | where AccountType == "User" and LogonType == 2
 | project TimeGenerated, Account, Computer, LogonType, IpAddress
